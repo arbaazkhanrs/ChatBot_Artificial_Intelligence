@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisitorsForm</title>
+    
+    <style>
+        body{
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+       
+            .main {
+            position: absolute;
+            padding: 30px;
+            top: 25px;
+            left: 30px;
+            width: 40%;
+            height: 80%;
+            border-radius: 50px;
+            background-color:deepskyblue;
+            overflow-x: hidden;
+            }
+    
+            form {
+                
+                margin: auto;
+                position: relative;
+                font-size: 25px;
+            }
+
+            input {
+                width: 255px;
+                height: 25px;
+                margin-left: 10px;
+            }
+
+            select{
+                margin-left: 10px;
+                width: 255px;
+                height: 40px;
+                font-size: 15px;
+            }
+
+            #bg {
+                
+                    width: 1300px; 
+                    height: 800px;
+                    
+                    
+                    }
+                    #bg img {
+                    position: absolute;
+                    overflow: hidden; 
+                    top: 110; 
+                    left: 0; 
+                    right: 0; 
+                    bottom: -40px; 
+                    margin: auto; 
+                    
+                   
+                    }
+         
+           
+    </style>
+</head>
+<body>
+    <div id="bg">
+    <img src="static/ars.jpg" id="bg" alt=""></div>
+    
+    <div class="main">
+    <h1 style="font-size: 50px; text-align: center; color: rgb(252, 252, 252);">Visitor Form</h1>
+    
+    <form action="/regform" method="POST">
+        
+        <label>Name</label>
+        <input type="text" name="Username" placeholder="Please enter your name:" required/><br><br>
+
+        <label>E-mail</label>
+        <input type="text" name="email" placeholder="Please enter your E-mall address:" required/><br><br>
+
+        <label>Mobile</label>
+        <input type="text" name="mobileno" placeholder="Please enter your mobile number:" required/><br><br>
+
+        <label>Branch</label>
+        <select name="Interestedbranch" required>
+            <option value="ECE" >Electronics and Comunication</option>
+            <option value="ME" >Mechanical Engineering</option>
+            <option value="CSE" >Computer Science Engineering</option>
+            <option value="CE" >Civil Engineering</option>
+            <option value="EE" >Electrical Engineering</option>
+        </select>
+        <button style="width:200px; height:45px;border:rgb(10, 14, 12) solid 2px;
+        border-radius: 8px; margin-left: 200px; margin-top: 50px;" type="submit"  name="submitbtn" value="sub">Submit</button>
+    
+    </form>
+    </div>
+
+    
+</body>
+</html>

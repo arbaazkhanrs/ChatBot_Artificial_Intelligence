@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="font-size: 40px; text-align: center;">ChatBot History of {{az}}</h1>
+
+
+        
+    <div class="maindiv" id="maindiv">
+        {% for data in op %}
+        <div class="commonclass {% if data.responder=='user'%}userclass{% else %}botclass{% endif %}">{{data.responder}}:{{data.message}}</div>
+        {% endfor %}
+    </div>
+
+    <form action="/botback" method="POST">
+        <button style="width:200px; height:45px;border:rgb(10, 14, 12) solid 2px;
+         border-radius: 8px; margin-left: 810px;" type="submit"  name="btn" value="exit">Exit</button>
+
+    </form>
+
+
+    <form action="/clearchat" method="POST">
+        <button style="width:200px; height:45px;border:rgb(10, 14, 12) solid 2px;
+        border-radius: 8px; margin-left: 810px; margin-top: 20px;" type="submit"  name="btn" value="clear">Clear Chat</button>
+        
+    </form>
+    
+</body>
+</html>

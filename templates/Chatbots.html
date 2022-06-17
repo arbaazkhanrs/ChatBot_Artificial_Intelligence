@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(250, 252, 224)
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+
+        .maindiv{
+            display:flex;
+            flex-direction: column;
+            margin-left: 320px;
+            border-radius: 20px;
+            font-size: 18px;
+            overflow: hidden;
+        }
+           
+           
+        #parent{
+            width:  600px;
+            height: 350px;
+            background-color:rgb(8, 183, 241);
+            background-size: auto;
+            overflow-y: scroll;
+            
+        }
+        .userclass{
+            background-color: rgb(181, 247, 168);
+            align-self: flex-end;
+            
+        }
+        .botclass{
+            background-color: rgb(252, 252, 252);
+            align-self: flex-start;
+            
+        }
+        .commonclass{
+            padding: 5px;
+            border: solid;
+            border-radius: 50px;
+            margin: 10px;
+        }
+
+        .main{
+            margin-left: 220px;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 40px; text-align: center;">ChatBot with Artificial Intelligence{{az}}</h1>
+
+        
+    <div class="maindiv" id="parent">
+        {% for data in op %}
+        <div class="commonclass {% if data.responder=='user'%}userclass{% else %}botclass{% endif %}">{{data.responder}}:{{data.message}}</div>
+        {% endfor %}
+    </div>
+   <form action="/bot" method="POST">
+    <div class="main">
+       <input style="width:350px; margin-left: 100px;  height:40px;border:rgb(20, 19, 20) solid 2px; border-radius: 8px; "text" placeholder="enter your input here" name="UserId_1" required>
+       <button style="width:200px; height:45px; border:rgb(13, 13, 14) solid 2px; border-radius: 8px; margin-left:20px;"
+       type="submit" name="btn" value="sub">Submit</button>
+    </div>
+</form>
+    <form action="/botback" method="POST">
+    <button style="width:200px; height:45px;border:rgb(10, 14, 12) solid 2px;
+     border-radius: 8px; margin-left: 710px;" type="submit"  name="btn" value="exit">Exit</button>
+    </form>
+
+</body>
+<script>
+    var maindiv=document.getElementById("maindiv");
+    maindiv.scrollTop=maindiv.scrollHeight-maindiv.clientHeight;
+</script>
+</html>
